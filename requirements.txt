@@ -1,0 +1,6 @@
+hydra-core
+jax
+flax
+tqdm
+sklearn
+jax_resnet

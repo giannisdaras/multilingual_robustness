@@ -1,0 +1,104 @@
+seed: 64
+exp_name: non_linear
+
+train: true
+model:
+  type: resnet
+
+
+arch:
+  n: 3072 # 784 for MNIST, 768 for NewsGroup, 3072 for Cifar10
+  k: 4
+
+data:
+  max_samples: 10000
+  dataset_name: CIFAR10
+  size: 32
+  num_channels: 3
+  num_classes: 10
+
+optim:
+  batch_size: 32 # total batch size
+  lr: 1e-4
+  weight_decay: 1e-4
+  epochs: 3
+
+
+corruption:
+  type: random_deletions
+  random_deletions:
+    iters: [0.0, 0.1, 0.15, 0.2, 0.3, 0.4]
+  additive_noise:
+    iters: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0 ]
+  magnitude_pruning:
+    iters: [0., 0.2, 0.4, 0.6, 0.8, 1.0]
+
+
+task:
+  classes: [
+    [
+      [0, 1]
+    ],
+    [
+      [0, 1],
+      [1, 2]
+    ],
+    [
+      [0, 1],
+      [1, 2],
+      [2, 3]
+    ]
+    # [
+    #   [0, 1],
+    #   [1, 2],
+    #   [2, 3],
+    #   [3, 4]
+    # ],
+    # [
+    #   [0, 1],
+    #   [1, 2],
+    #   [2, 3],
+    #   [3, 4],
+    #   [4, 5]
+    # ],
+    # [
+    #   [0, 1],
+    #   [1, 2],
+    #   [2, 3],
+    #   [3, 4],
+    #   [4, 5],
+    #   [5, 6]
+    # ],
+    # [
+    #   [0, 1],
+    #   [1, 2],
+    #   [2, 3],
+    #   [3, 4],
+    #   [4, 5],
+    #   [5, 6],
+    #   [6, 7]
+    # ],
+    # [
+    #   [0, 1],
+    #   [1, 2],
+    #   [2, 3],
+    #   [3, 4],
+    #   [4, 5],
+    #   [5, 6],
+    #   [6, 7],
+    #   [7, 8]
+    # ],
+    # [
+    #   [0, 1],
+    #   [1, 2],
+    #   [2, 3],
+    #   [3, 4],
+    #   [4, 5],
+    #   [5, 6],
+    #   [6, 7],
+    #   [7, 8],
+    #   [8, 9]
+    # ],
+  ]
+
+
