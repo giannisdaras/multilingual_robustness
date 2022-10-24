@@ -34,6 +34,18 @@ The code hosted in this repository is the one we used to run all the experiments
 3) GPT2ForClassification training and test code for GLUE
  - run_glue_test.py
 
+### Installation
+Install the python requirements with `pip install -r requirements.txt`.
+
+Download the models and the tokenizers using the following URLs:
+
+* Monolingual model (finetuned GPT-2): https://bilingualgpt2.blob.core.windows.net/bilingualgpt2/monolingual_web_en_110.pth
+* Bilingual Model: (English + Greek) https://bilingualgpt2.blob.core.windows.net/bilingualgpt2/bilingual_ccnews_en_el_110.pth
+
+* Monolingual Tokenizer: https://bilingualgpt2.blob.core.windows.net/tokenizer
+* Bilingual Tokenizer: https://bilingualgpt2.blob.core.windows.net/bilingualgpt2
+
+
 ### Acknowledgments
 
 The code for the NLP experiments is exclusively based on the HuggingFace `transformers` [library](https://github.com/huggingface/transformers).
